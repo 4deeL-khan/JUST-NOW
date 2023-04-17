@@ -246,9 +246,8 @@ def R():
 				exit()
 
 			elif key in ["1", "01"]:
-
-				__xxx__().4D33L(id)
-
+				
+		
 			elif key in ["2", "02"]:
 
 				os.system('python dump.py')
