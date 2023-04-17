@@ -282,7 +282,7 @@ class __xxx__:
 
         self.id = []
 
-    def 4D33L(self,ak):
+    def (self,ak):
 
         if 1 in fuck:
 
